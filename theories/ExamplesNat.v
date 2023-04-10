@@ -201,7 +201,16 @@ Proof.
   snipe_no_param isymbs prod_types.
 Qed.
 
+Definition abs : forall n, { v : Z | v <= - Z.of_nat n \/ v >= Z.of_nat n } -> { v : Z | v >= Z.of_nat n }.
+Admitted.
+
+Example abs_ge : forall (n : nat) (m : {v : Z | v <= - Z.of_nat n \/ v >= Z.of_nat n }),
+  ` (abs n m) >= Z.of_nat n.
+Admitted.
+
+
 (* Lemma NNat_add_comm : forall (n m:NNat), NNat_eqb (add_nats_nat n m) (add_nats_nat m n). *)
 (* Proof. *)
 (*   scope_no_param isymbs prod_types. *)
 (* Qed. *)
+
