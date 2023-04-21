@@ -201,6 +201,16 @@ Proof.
   snipe_no_param isymbs prod_types.
 Qed.
 
+Definition nnat_zero : NNat.
+Proof.
+  exists 0. lia.
+Qed.
+
+Lemma NNat_ge_zero : forall (n : NNat), NNat_geb n nnat_zero.
+Proof.
+  snipe_no_param isymbs prod_types.
+Abort.
+
 (* Lemma NNat_add_comm : forall (n m:NNat), NNat_eqb (add_nats_nat n m) (add_nats_nat m n). *)
 (* Proof. *)
 (*   scope_no_param isymbs prod_types. *)
